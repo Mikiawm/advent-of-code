@@ -4,4 +4,6 @@
 
 (for ([i (in-range 0 1000)]
       [j (in-range 0 1000)])
-  (printf "Value ~a, ~a\n" i j))
+  (hash-set! table (cons i j) 0)
+  (printf "Value ~a, ~a\n" i j)
+  (display table))
