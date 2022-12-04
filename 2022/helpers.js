@@ -10,5 +10,13 @@ module.exports = {
     },
     splitOnHalf: function (str) {
         return [str.slice(0, str.length / 2).split(''), str.slice(str.length / 2, str.length).split('')];
+    },
+    range: function (start, end) {
+        var list = [];
+        for (var i = +start; i <= +end; i++) {
+            list.push(i);
+        }
+        return list;
+
     }
 }
