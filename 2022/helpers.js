@@ -17,6 +17,29 @@ module.exports = {
             list.push(i);
         }
         return list;
+    },
+    isLetter: function (str) {
+        return str.length === 1 && str.match(/[a-z]/i);
+    },
+    groupBy: function (data, key, itemMap = (item) => item) {
+        return data.reduce(function (storage, item) {
+            var group = item[key];
 
+            storage[group] = storage[group] || [];
+            storage[group].push(itemMap(item));
+
+            return storage;
+        }, {});
+    },
+    isNumber2: function (char) {
+        if (typeof char !== 'string') {
+            return false;
+        }
+
+        if (char.trim() === '') {
+            return false;
+        }
+
+        return !isNaN(char);
     }
 }
